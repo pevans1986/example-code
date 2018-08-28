@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DomainContext.cs" />
     <Compile Include="EfRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -56,9 +57,15 @@
       <Project>{672C02E5-6061-4951-8642-EF9479183E3D}</Project>
       <Name>Evans.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Evans.Models\Evans.Models.csproj">
+      <Project>{C03392B4-D5AD-42CD-B6DB-6FAA9A20876E}</Project>
+      <Name>Evans.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

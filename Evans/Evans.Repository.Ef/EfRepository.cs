@@ -79,9 +79,35 @@ namespace Evans.Repository.Ef
 
 		public IQueryable<TEntity> Get(Expression<Func<TEntity, bool>> predicate) => EntityDbSet.Where(predicate);
 
+		public IQueryable<TEntity> GetAll() => EntityDbSet;
+
 		public TEntity GetById(object id) => EntityDbSet.Find(id);
 
 		public void SaveChanges() => _context.SaveChanges();
+
+		public void Update(object id, TEntity model)
+		{
+			bool _valuesAreUpdated = false;
+			var entry = _context.Entry(model);
+
+			// If the entry is detached, get the attached entity represented by the model and update
+			// its values instead of changing the EntityState. Otherwise, a duplicate key exception
+			// will be thrown if the entity represented by the model is attached.
+			if (entry.State == EntityState.Detached)
+			{
+				var attachedEntity = GetById(id);
+				if (attachedEntity != null)
+				{
+					_context.Entry(attachedEntity).CurrentValues.SetValues(model);
+					_valuesAreUpdated = true;
+				}
+			}
+
+			if (!_valuesAreUpdated)
+			{
+				entry.State = EntityState.Modified;
+			}
+		}
 
 		#endregion Public Methods
 

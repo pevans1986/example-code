@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Evans.Models
 {
-	public class EmailAddress
+	public class EmailAddress : Model
 	{
 		#region Public Properties
 

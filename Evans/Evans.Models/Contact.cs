@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Evans.Models
 {
-	public class Contact
+	public class Contact : Model
 	{
 		#region Public Properties
 

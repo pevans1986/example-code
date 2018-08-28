@@ -25,11 +25,15 @@ namespace Evans.Core.Repository
 
 		bool Exists(object id);
 
+		IQueryable<TModel> GetAll();
+
 		TModel GetById(object id);
 
 		IQueryable<TModel> Get(Expression<Func<TModel, bool>> predicate);
 
 		void SaveChanges();
+
+		void Update(object id, TModel model);
 
 		#endregion Public Methods
 	}

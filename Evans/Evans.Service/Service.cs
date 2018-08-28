@@ -26,5 +26,31 @@ namespace Evans.Service
 		}
 
 		#endregion Public Constructors
+
+		#region Public Methods
+
+		public void Add(TModel model)
+		{
+			_repository.Add(model);
+			_repository.SaveChanges();
+		}
+
+		public void Delete(object id)
+		{
+			_repository.Delete(id);
+			_repository.SaveChanges();
+		}
+
+		public IEnumerable<TModel> GetAll() => _repository.GetAll().ToList();
+
+		public TModel GetById(object id) => _repository.GetById(id);
+
+		public void Update(object id, TModel model)
+		{
+			_repository.Update(id, model);
+			_repository.SaveChanges();
+		}
+
+		#endregion Public Methods
 	}
 }
