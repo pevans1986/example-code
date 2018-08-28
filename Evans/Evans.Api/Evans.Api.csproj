@@ -18,7 +18,6 @@
     <ProjectReference Include="..\Evans.Core.Api\Evans.Core.Api.csproj" />
     <ProjectReference Include="..\Evans.Core\Evans.Core.csproj" />
     <ProjectReference Include="..\Evans.Models\Evans.Models.csproj" />
-    <ProjectReference Include="..\Evans.Repository.Ef\Evans.Repository.Ef.csproj" />
     <ProjectReference Include="..\Evans.Service\Evans.Service.csproj" />
   </ItemGroup>
 
