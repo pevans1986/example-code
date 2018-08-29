@@ -29,6 +29,7 @@ namespace Evans.Core.Api
 
 		// DELETE api/values/5
 		[HttpDelete]
+		[Route("/{id}")]
 		public virtual IHttpActionResult Delete(object id)
 		{
 			Service.Delete(id);
@@ -37,6 +38,7 @@ namespace Evans.Core.Api
 
 		// GET api/values
 		[HttpGet]
+		[Route("/")]
 		public virtual IHttpActionResult Get()
 		{
 			var models = Service.GetAll();
@@ -45,6 +47,7 @@ namespace Evans.Core.Api
 
 		// GET api/values/5
 		[HttpGet]
+		[Route("/{id}")]
 		public virtual IHttpActionResult Get(object id)
 		{
 			var model = Service.GetById(id);
@@ -53,6 +56,7 @@ namespace Evans.Core.Api
 
 		// POST api/values
 		[HttpPost]
+		[Route("/")]
 		public virtual IHttpActionResult Post(TModel model)
 		{
 			Service.Add(model);
@@ -61,6 +65,7 @@ namespace Evans.Core.Api
 
 		// PUT api/values/5
 		[HttpPut]
+		[Route("/{id}")]
 		public virtual IHttpActionResult Put(object id, TModel model)
 		{
 			Service.Update(id, model);
