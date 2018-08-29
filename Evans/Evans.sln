@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evans.Repository.Ef", "Evan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evans.Api", "Evans.Api\Evans.Api.csproj", "{2DD3A7EC-3182-49EC-86C2-98BE4A759B59}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evans.Core.Api", "Evans.Core.Api\Evans.Core.Api.csproj", "{5E93079E-7A8E-4AEA-B605-93328188EB2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{2DD3A7EC-3182-49EC-86C2-98BE4A759B59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DD3A7EC-3182-49EC-86C2-98BE4A759B59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DD3A7EC-3182-49EC-86C2-98BE4A759B59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E93079E-7A8E-4AEA-B605-93328188EB2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E93079E-7A8E-4AEA-B605-93328188EB2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E93079E-7A8E-4AEA-B605-93328188EB2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E93079E-7A8E-4AEA-B605-93328188EB2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

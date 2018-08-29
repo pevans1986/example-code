@@ -228,7 +228,9 @@
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -277,9 +279,25 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Evans.Core.Api\Evans.Core.Api.csproj">
+      <Project>{5e93079e-7a8e-4aea-b605-93328188eb2f}</Project>
+      <Name>Evans.Core.Api</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Evans.Core\Evans.Core.csproj">
+      <Project>{672c02e5-6061-4951-8642-ef9479183e3d}</Project>
+      <Name>Evans.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Evans.Models\Evans.Models.csproj">
+      <Project>{c03392b4-d5ad-42cd-b6db-6faa9a20876e}</Project>
+      <Name>Evans.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Evans.Repository.Ef\Evans.Repository.Ef.csproj">
       <Project>{db148dfd-7d1c-4725-a1a1-f8b9698ef593}</Project>
       <Name>Evans.Repository.Ef</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Evans.Service\Evans.Service.csproj">
+      <Project>{2642cd7e-0d9f-42b5-aa28-8a12e8226860}</Project>
+      <Name>Evans.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -1,76 +1,69 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Web.Http;
 
 using Evans.Core.Service;
 
-using Microsoft.AspNetCore.Mvc;
-
 namespace Evans.Core.Api
 {
-	public class WebApiController<TModel> : ControllerBase
+	public class WebApiController<TModel> : ApiController
 		where TModel : class
 	{
-		#region Private Fields
-
-		private readonly IService<TModel> _service;
-
-		#endregion Private Fields
-
 		#region Public Constructors
 
 		public WebApiController(IService<TModel> service)
 		{
-			_service = service;
+			Service = service;
 		}
 
 		#endregion Public Constructors
 
 		#region Protected Properties
 
-		protected IService<TModel> Service => _service;
+		protected IService<TModel> Service { get; }
 
 		#endregion Protected Properties
 
 		#region Public Methods
 
 		// DELETE api/values/5
-		[HttpDelete("{id}")]
-		public ActionResult Delete(object id)
+		[HttpDelete]
+		public virtual IHttpActionResult Delete(object id)
 		{
-			_service.Delete(id);
+			Service.Delete(id);
 			return Ok();
 		}
 
 		// GET api/values
 		[HttpGet]
-		public virtual ActionResult<IEnumerable<TModel>> Get()
+		public virtual IHttpActionResult Get()
 		{
-			var models = _service.GetAll();
+			var models = Service.GetAll();
 			return Ok(models);
 		}
 
 		// GET api/values/5
-		[HttpGet("{id}")]
-		public ActionResult<TModel> Get(object id)
+		[HttpGet]
+		public virtual IHttpActionResult Get(object id)
 		{
-			var model = _service.GetById(id);
+			var model = Service.GetById(id);
 			return Ok(model);
 		}
 
 		// POST api/values
 		[HttpPost]
-		public ActionResult Post(TModel model)
+		public virtual IHttpActionResult Post(TModel model)
 		{
-			_service.Add(model);
+			Service.Add(model);
 			return Ok();
 		}
 
 		// PUT api/values/5
-		[HttpPut("{id}")]
-		public ActionResult Put(object id, TModel model)
+		[HttpPut]
+		public virtual IHttpActionResult Put(object id, TModel model)
 		{
-			_service.Update(id, model);
+			Service.Update(id, model);
 			return Ok();
 		}
 
