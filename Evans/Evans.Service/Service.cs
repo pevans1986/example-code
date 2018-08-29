@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Evans.Core.Models;
 using Evans.Core.Repository;
 using Evans.Core.Service;
 
 namespace Evans.Service
 {
 	public class Service<TModel> : IService<TModel>
-		where TModel : class
+		where TModel : class, IDomainEntity
 	{
 		#region Private Fields
 
@@ -35,7 +36,7 @@ namespace Evans.Service
 			_repository.SaveChanges();
 		}
 
-		public void Delete(object id)
+		public void Delete(Guid id)
 		{
 			_repository.Delete(id);
 			_repository.SaveChanges();
@@ -43,9 +44,9 @@ namespace Evans.Service
 
 		public IEnumerable<TModel> GetAll() => _repository.GetAll().ToList();
 
-		public TModel GetById(object id) => _repository.GetById(id);
+		public TModel GetById(Guid id) => _repository.GetById(id);
 
-		public void Update(object id, TModel model)
+		public void Update(Guid id, TModel model)
 		{
 			_repository.Update(id, model);
 			_repository.SaveChanges();

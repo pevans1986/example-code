@@ -47,5 +47,11 @@
     <Compile Include="Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Evans.Core\Evans.Core.csproj">
+      <Project>{672C02E5-6061-4951-8642-EF9479183E3D}</Project>
+      <Name>Evans.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

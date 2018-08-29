@@ -12,6 +12,10 @@ namespace Evans.Api
 	{
 		#region Public Methods
 
+		/// <summary>
+		/// Initializes the web API routes, IoC container, and response formatters.
+		/// </summary>
+		/// <param name="config"></param>
 		public static void Register(HttpConfiguration config)
 		{
 			// Set up the DI container
@@ -21,13 +25,18 @@ namespace Evans.Api
 			config.MapHttpAttributeRoutes();
 			config.Routes.MapHttpRoute(
 				name: "DefaultApi",
-				routeTemplate: "api/{controller}"
+				routeTemplate: "api/{controller}/{id}",
+				defaults: new { id = RouteParameter.Optional }
 			);
 
 			RegisterFormatters(config);
 		}
 
-		public static void RegisterFormatters(HttpConfiguration config)
+		#endregion Public Methods
+
+		#region Private Methods
+
+		private static void RegisterFormatters(HttpConfiguration config)
 		{
 			config.Formatters.Clear();
 
@@ -42,6 +51,6 @@ namespace Evans.Api
 			config.Formatters.Add(jsonFormatter);
 		}
 
-		#endregion Public Methods
+		#endregion Private Methods
 	}
 }

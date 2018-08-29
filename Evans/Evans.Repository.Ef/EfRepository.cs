@@ -6,12 +6,13 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
+using Evans.Core.Models;
 using Evans.Core.Repository;
 
 namespace Evans.Repository.Ef
 {
 	public class EfRepository<TEntity> : IRepository<TEntity>, IDisposable
-		where TEntity : class
+		where TEntity : class, IDomainEntity
 	{
 		#region Private Fields
 
@@ -58,7 +59,7 @@ namespace Evans.Repository.Ef
 			EntityDbSet.RemoveRange(entities);
 		}
 
-		public void Delete(object id)
+		public void Delete(Guid id)
 		{
 			var entity = EntityDbSet.Find(id);
 			Delete(entity);
@@ -75,17 +76,17 @@ namespace Evans.Repository.Ef
 			Dispose(true);
 		}
 
-		public bool Exists(object id) => GetById(id) != null;
+		public bool Exists(Guid id) => GetById(id) != null;
 
 		public IQueryable<TEntity> Get(Expression<Func<TEntity, bool>> predicate) => EntityDbSet.Where(predicate);
 
 		public IQueryable<TEntity> GetAll() => EntityDbSet;
 
-		public TEntity GetById(object id) => EntityDbSet.Find(id);
+		public TEntity GetById(Guid id) => EntityDbSet.Find(id);
 
 		public void SaveChanges() => _context.SaveChanges();
 
-		public void Update(object id, TEntity model)
+		public void Update(Guid id, TEntity model)
 		{
 			bool _valuesAreUpdated = false;
 			var entry = _context.Entry(model);

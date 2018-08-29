@@ -6,9 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Evans.Core.Models;
+
 namespace Evans.Models
 {
-	public abstract class Model
+	public abstract class Model : IDomainEntity
 	{
 		#region Public Properties
 

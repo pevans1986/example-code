@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Text;
 using System.Web.Http;
 
+using Evans.Core.Models;
 using Evans.Core.Service;
 
 namespace Evans.Core.Api
 {
 	public class WebApiController<TModel> : ApiController
-		where TModel : class
+		where TModel : class, IDomainEntity
 	{
 		#region Public Constructors
 
@@ -27,46 +28,36 @@ namespace Evans.Core.Api
 
 		#region Public Methods
 
-		// DELETE api/values/5
 		[HttpDelete]
-		[Route("/{id}")]
-		public virtual IHttpActionResult Delete(object id)
+		public virtual IHttpActionResult Delete(Guid id)
 		{
 			Service.Delete(id);
 			return Ok();
 		}
 
-		// GET api/values
 		[HttpGet]
-		[Route("/")]
 		public virtual IHttpActionResult Get()
 		{
 			var models = Service.GetAll();
 			return Ok(models);
 		}
 
-		// GET api/values/5
 		[HttpGet]
-		[Route("/{id}")]
-		public virtual IHttpActionResult Get(object id)
+		public virtual IHttpActionResult Get(Guid id)
 		{
 			var model = Service.GetById(id);
 			return Ok(model);
 		}
 
-		// POST api/values
 		[HttpPost]
-		[Route("/")]
 		public virtual IHttpActionResult Post(TModel model)
 		{
 			Service.Add(model);
 			return Ok();
 		}
 
-		// PUT api/values/5
 		[HttpPut]
-		[Route("/{id}")]
-		public virtual IHttpActionResult Put(object id, TModel model)
+		public virtual IHttpActionResult Put(Guid id, TModel model)
 		{
 			Service.Update(id, model);
 			return Ok();

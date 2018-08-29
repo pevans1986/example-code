@@ -4,19 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Evans.Core.Models;
+
 namespace Evans.Core.Service
 {
-	public interface IService<TModel>
-		where TModel : class
+	public interface IService<TModel> 
+		where TModel : class, IDomainEntity
 	{
 		void Add(TModel model);
 
-		void Delete(object id);
+		void Delete(Guid id);
 
 		IEnumerable<TModel> GetAll();
 
-		TModel GetById(object id);
+		TModel GetById(Guid id);
 
-		void Update(object id, TModel model);
+		void Update(Guid id, TModel model);
 	}
 }

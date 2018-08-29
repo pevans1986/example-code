@@ -5,9 +5,12 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
+using Evans.Core.Models;
+
 namespace Evans.Core.Repository
 {
-	public interface IRepository<TModel> where TModel : class
+	public interface IRepository<TModel> 
+		where TModel : class, IDomainEntity
 	{
 		#region Public Methods
 
@@ -15,7 +18,7 @@ namespace Evans.Core.Repository
 
 		void Add(IEnumerable<TModel> entities);
 
-		void Delete(object id);
+		void Delete(Guid id);
 
 		void Delete(TModel entity);
 
@@ -23,17 +26,17 @@ namespace Evans.Core.Repository
 
 		void Delete(Expression<Func<TModel, bool>> predicate);
 
-		bool Exists(object id);
+		bool Exists(Guid id);
 
 		IQueryable<TModel> GetAll();
 
-		TModel GetById(object id);
+		TModel GetById(Guid id);
 
 		IQueryable<TModel> Get(Expression<Func<TModel, bool>> predicate);
 
 		void SaveChanges();
 
-		void Update(object id, TModel model);
+		void Update(Guid id, TModel model);
 
 		#endregion Public Methods
 	}
