@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http.Formatting;
+using System.Text;
+using System.Threading.Tasks;
+
+using Newtonsoft.Json;
+
+namespace System.Web.Http
+{
+	public static class HttpConfigurationExtensions
+	{
+		#region Public Methods
+
+		public static void RegisterDefaultJsonFormatter(this HttpConfiguration self)
+		{
+			var jsonFormatter = self.Formatters.OfType<JsonMediaTypeFormatter>().FirstOrDefault();
+			if (jsonFormatter == null)
+			{
+				jsonFormatter = new JsonMediaTypeFormatter();
+			}
+
+			jsonFormatter.Indent = true;
+			jsonFormatter.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+			self.Formatters.Add(jsonFormatter);
+		}
+
+		#endregion Public Methods
+	}
+}

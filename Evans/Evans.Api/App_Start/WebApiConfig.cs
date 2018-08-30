@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http.Formatting;
 using System.Web.Http;
-
-using Newtonsoft.Json;
 
 namespace Evans.Api
 {
@@ -29,28 +26,10 @@ namespace Evans.Api
 				defaults: new { id = RouteParameter.Optional }
 			);
 
-			RegisterFormatters(config);
+			config.Formatters.Clear();
+			config.RegisterDefaultJsonFormatter();
 		}
 
 		#endregion Public Methods
-
-		#region Private Methods
-
-		private static void RegisterFormatters(HttpConfiguration config)
-		{
-			config.Formatters.Clear();
-
-			var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().FirstOrDefault();
-			if (jsonFormatter == null)
-			{
-				jsonFormatter = new JsonMediaTypeFormatter();
-			}
-
-			jsonFormatter.Indent = true;
-			jsonFormatter.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-			config.Formatters.Add(jsonFormatter);
-		}
-
-		#endregion Private Methods
 	}
 }
