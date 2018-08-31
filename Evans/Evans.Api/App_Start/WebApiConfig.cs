@@ -26,8 +26,12 @@ namespace Evans.Api
 				defaults: new { id = RouteParameter.Optional }
 			);
 
+			// Register media-type formatters
 			config.Formatters.Clear();
 			config.RegisterDefaultJsonFormatter();
+
+			// Register Swagger UI for API documentation
+			SwaggerConfig.Register(config);
 		}
 
 		#endregion Public Methods
