@@ -46,6 +46,24 @@
     <Compile Include="Contact.cs" />
     <Compile Include="EmailAddress.cs" />
     <Compile Include="Model.cs" />
+    <Compile Include="Northwind\Category.cs" />
+    <Compile Include="Northwind\Customer.cs" />
+    <Compile Include="Northwind\CustomerCustomerDemo.cs" />
+    <Compile Include="Northwind\CustomerDemographic.cs" />
+    <Compile Include="Northwind\Employee.cs" />
+    <Compile Include="Northwind\EmployeeTerritory.cs" />
+    <Compile Include="Northwind\FakeDbSet.cs" />
+    <Compile Include="Northwind\FakeNorthwindContext.cs" />
+    <Compile Include="Northwind\INorthwindContext.cs" />
+    <Compile Include="Northwind\NorthwindContext.cs" />
+    <Compile Include="Northwind\NorthwindContextFactory.cs" />
+    <Compile Include="Northwind\Order.cs" />
+    <Compile Include="Northwind\OrderDetail.cs" />
+    <Compile Include="Northwind\Product.cs" />
+    <Compile Include="Northwind\Region.cs" />
+    <Compile Include="Northwind\Shipper.cs" />
+    <Compile Include="Northwind\Supplier.cs" />
+    <Compile Include="Northwind\Territory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -54,9 +72,7 @@
       <Name>Evans.Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Northwind\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
