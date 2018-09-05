@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evans.Core.Api", "Evans.Cor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evans.Core.Extensions", "Evans.Core.Extensions\Evans.Core.Extensions.csproj", "{91ABB235-ED51-43D3-95A8-9771F6BA8CA5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evans.Repository.Ef.Northwind", "Evans.Repository.Ef.Northwind\Evans.Repository.Ef.Northwind.csproj", "{F6D19951-B6BE-4A70-8CE9-C87637832549}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{91ABB235-ED51-43D3-95A8-9771F6BA8CA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91ABB235-ED51-43D3-95A8-9771F6BA8CA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91ABB235-ED51-43D3-95A8-9771F6BA8CA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6D19951-B6BE-4A70-8CE9-C87637832549}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6D19951-B6BE-4A70-8CE9-C87637832549}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6D19951-B6BE-4A70-8CE9-C87637832549}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6D19951-B6BE-4A70-8CE9-C87637832549}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
