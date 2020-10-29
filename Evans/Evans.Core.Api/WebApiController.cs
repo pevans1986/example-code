@@ -8,6 +8,10 @@ using Evans.Core.Service;
 
 namespace Evans.Core.Api
 {
+	/// <summary>
+	/// Base web API controller object that implements some default functionality like HTTP method
+	/// handlers (delete / get / post / put).
+	/// </summary>
 	public class WebApiController<TModel> : ApiController
 		where TModel : class, IDomainEntity
 	{

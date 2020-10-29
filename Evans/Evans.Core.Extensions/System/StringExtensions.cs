@@ -18,6 +18,11 @@ namespace System
 		/// <returns></returns>
 		public static string CollapseSpaces(this string self)
 		{
+			if (self == null)
+			{
+				return self;
+			}
+
 			return Regex.Replace(self, @"\s+", " ");
 		}
 
@@ -30,6 +35,16 @@ namespace System
 		/// <returns></returns>
 		public static bool EqualsIgnoreCase(this string self, string compValue)
 		{
+			if (self == null)
+			{
+				return compValue == null;
+			}
+
+			if (compValue == null)
+			{
+				return false;
+			}
+
 			return self.Equals(compValue, StringComparison.CurrentCultureIgnoreCase);
 		}
 
@@ -100,14 +115,28 @@ namespace System
 		/// <seealso cref="StringComparison.CurrentCultureIgnoreCase"/>
 		public static bool StartsWithIgnoreCase(this string self, string value)
 		{
+			if (self == null || value == null)
+			{
+				return false;
+			}
+
 			return self.StartsWith(value, StringComparison.CurrentCultureIgnoreCase);
 		}
 
 		/// <summary>
-		/// Converts CamelCase strings to Separate Words (e.g. Camel Case).
+		/// Converts strings to separate words based on capitalization.
 		/// </summary>
 		/// <param name="self"></param>
-		public static string ToSeparateWords(this string self) => Regex.Replace(self, "([A-Z][a-z])", " $1").Trim();
+		public static string ToSeparateWords(this string self) 
+		{
+			if (self.IsBlank())
+			{
+				return self;
+			}
+
+			// TODO Include options for patterns - capitalization, camelCase, underline, etc
+			return Regex.Replace(self, "([A-Z][a-z])", " $1").Trim();
+		}
 
 		/// <summary>
 		/// If the value of this <see cref="string"/> is longer than the given maximum number of
@@ -118,6 +147,11 @@ namespace System
 		/// <returns></returns>
 		public static string Truncate(this string self, int maxLength)
 		{
+			if (self == null || maxLength <= 0)
+			{
+				return self;
+			}
+
 			if (self.IsLongerThan(maxLength))
 			{
 				return self.Substring(0, maxLength);

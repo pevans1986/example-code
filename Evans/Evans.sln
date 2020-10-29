@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2003
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evans.Core", "Evans.Core\Evans.Core.csproj", "{672C02E5-6061-4951-8642-EF9479183E3D}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evans.Core.Extensions", "Evans.Core.Extensions\Evans.Core.Extensions.csproj", "{91ABB235-ED51-43D3-95A8-9771F6BA8CA5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evans.Repository.Ef.Northwind", "Evans.Repository.Ef.Northwind\Evans.Repository.Ef.Northwind.csproj", "{F6D19951-B6BE-4A70-8CE9-C87637832549}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evans.Core.Extensions.Tests", "Evans.Core.Extensions.Tests\Evans.Core.Extensions.Tests.csproj", "{B2BAE38A-05CC-4154-AEA4-D497190505C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{F6D19951-B6BE-4A70-8CE9-C87637832549}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6D19951-B6BE-4A70-8CE9-C87637832549}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6D19951-B6BE-4A70-8CE9-C87637832549}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2BAE38A-05CC-4154-AEA4-D497190505C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2BAE38A-05CC-4154-AEA4-D497190505C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2BAE38A-05CC-4154-AEA4-D497190505C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2BAE38A-05CC-4154-AEA4-D497190505C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

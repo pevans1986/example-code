@@ -9,6 +9,9 @@ using Evans.Core.Models;
 
 namespace Evans.Core.Repository
 {
+	/// <summary>
+	/// To be implemented by repository classes used for data access.
+	/// </summary>
 	public interface IRepository<TModel> 
 		where TModel : class, IDomainEntity
 	{

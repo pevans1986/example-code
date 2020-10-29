@@ -13,13 +13,15 @@ namespace System.Web.Http
 	{
 		#region Public Methods
 
+		/// <summary>
+		/// Convenience method for registering default <see cref="JsonMediaTypeFormatter"/> settings.
+		/// </summary>
+		/// <param name="self">The self.</param>
 		public static void RegisterDefaultJsonFormatter(this HttpConfiguration self)
 		{
-			var jsonFormatter = self.Formatters.OfType<JsonMediaTypeFormatter>().FirstOrDefault();
-			if (jsonFormatter == null)
-			{
-				jsonFormatter = new JsonMediaTypeFormatter();
-			}
+			var jsonFormatter = 
+				self.Formatters.OfType<JsonMediaTypeFormatter>().FirstOrDefault()
+				?? new JsonMediaTypeFormatter();
 
 			jsonFormatter.Indent = true;
 			jsonFormatter.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;

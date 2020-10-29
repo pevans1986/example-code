@@ -56,6 +56,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitOfWorkEf.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -69,6 +70,10 @@
     <ProjectReference Include="..\Evans.Models\Evans.Models.csproj">
       <Project>{c03392b4-d5ad-42cd-b6db-6faa9a20876e}</Project>
       <Name>Evans.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Evans.Repository.Ef.Northwind\Evans.Repository.Ef.Northwind.csproj">
+      <Project>{F6D19951-B6BE-4A70-8CE9-C87637832549}</Project>
+      <Name>Evans.Repository.Ef.Northwind</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -52,11 +52,6 @@
     <Compile Include="Northwind\CustomerDemographic.cs" />
     <Compile Include="Northwind\Employee.cs" />
     <Compile Include="Northwind\EmployeeTerritory.cs" />
-    <Compile Include="Northwind\FakeDbSet.cs" />
-    <Compile Include="Northwind\FakeNorthwindContext.cs" />
-    <Compile Include="Northwind\INorthwindContext.cs" />
-    <Compile Include="Northwind\NorthwindContext.cs" />
-    <Compile Include="Northwind\NorthwindContextFactory.cs" />
     <Compile Include="Northwind\Order.cs" />
     <Compile Include="Northwind\OrderDetail.cs" />
     <Compile Include="Northwind\Product.cs" />
