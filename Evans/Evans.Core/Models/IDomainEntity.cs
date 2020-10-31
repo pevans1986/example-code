@@ -9,7 +9,7 @@ namespace Evans.Core.Models
 	/// <summary>
 	/// To be implemented by data-backed models with a <see cref="Guid"/> identifier named <c>Id</c>.
 	/// </summary>
-	public interface IDomainEntity
+	public interface IDomainEntity : IModel<Guid>
 	{
 		#region Public Properties
 
