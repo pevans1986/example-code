@@ -16,7 +16,7 @@ namespace System.Web.Http
 		/// <summary>
 		/// Convenience method for registering default <see cref="JsonMediaTypeFormatter"/> settings.
 		/// </summary>
-		/// <param name="self">The self.</param>
+		/// <param name="self"></param>
 		public static void RegisterDefaultJsonFormatter(this HttpConfiguration self)
 		{
 			var jsonFormatter = 
