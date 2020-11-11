@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\IBootstrap.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="IChangeSubscriber.cs" />
     <Compile Include="IoC\IContainer.cs" />
     <Compile Include="Models\IDomainEntity.cs" />

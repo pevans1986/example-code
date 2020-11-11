@@ -19,8 +19,8 @@ namespace Evans.Core.Extensions.System.Reflection
 		#region Public Methods
 
 		/// <summary>
-		/// If this type is annotated with the given <see cref="Attribute"/> type , that attribute is
-		/// returned. Otherwise, <c>null</c>.
+		/// If this <see cref="MemberInfo"/> is annotated with the given <see cref="Attribute"/> type , that 
+		/// attribute is returned. Otherwise, <c>null</c>.
 		/// <para>
 		/// Note that this will only return a single instance of the attribute. If the attribute can
 		/// be defined multiple times, use <see cref="GetAttributes{T}(MemberInfo, bool)"/> instead.

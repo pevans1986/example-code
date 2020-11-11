@@ -5,10 +5,11 @@ using System.Collections.Generic;
 using System;
 using Evans.Core.Models;
 
-using System.Collections.Generic;
-
 namespace Evans.Core
 {
+	/// <summary>
+	/// Allows subscribing to changes affecting <see cref="IDomainEntity"/> objects.
+	/// </summary>
 	public interface IChangeSubscriber
 	{
 		#region Methods

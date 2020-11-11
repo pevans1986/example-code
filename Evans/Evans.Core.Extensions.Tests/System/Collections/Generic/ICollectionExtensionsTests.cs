@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Evans.Core.Extensions.System.Collections.Generic.Tests
 {
 	[TestFixture()]
-	public class IListExtensionsTests
+	public class ICollectionExtensionsTests
 	{
 		[Test()]
 		[TestCase("string1")]
