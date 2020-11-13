@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Evans.Core.Extensions</RootNamespace>
     <AssemblyName>Evans.Core.Extensions</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -50,9 +51,9 @@
     <Compile Include="System\TypeExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Evans.Core\Evans.Core.csproj">
-      <Project>{672c02e5-6061-4951-8642-ef9479183e3d}</Project>
-      <Name>Evans.Core</Name>
+    <ProjectReference Include="..\Evans.Core.Constants\Evans.Core.Constants.csproj">
+      <Project>{931197f2-2b0e-47a8-a3a5-10c3b7b124ef}</Project>
+      <Name>Evans.Core.Constants</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

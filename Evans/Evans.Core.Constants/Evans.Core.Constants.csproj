@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{672C02E5-6061-4951-8642-EF9479183E3D}</ProjectGuid>
+    <ProjectGuid>{931197F2-2B0E-47A8-A3A5-10C3B7B124EF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Evans.Core</RootNamespace>
-    <AssemblyName>Evans.Core</AssemblyName>
+    <RootNamespace>Evans.Core.Constants</RootNamespace>
+    <AssemblyName>Evans.Core.Constants</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,31 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config\IBootstrap.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="IChangeSubscriber.cs" />
-    <Compile Include="IoC\IContainer.cs" />
-    <Compile Include="Logging\ILogEntry.cs" />
-    <Compile Include="Logging\ILogger.cs" />
-    <Compile Include="Models\IDomainEntity.cs" />
-    <Compile Include="Models\IModel.cs" />
-    <Compile Include="Models\PropertyChangeHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reflection\AssemblyScanner.cs" />
-    <Compile Include="Reflection\TypeScanner.cs" />
-    <Compile Include="Repository\IRepository.cs" />
-    <Compile Include="Repository\Repository.cs" />
-    <Compile Include="Service\IService.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Evans.Core.Constants\Evans.Core.Constants.csproj">
-      <Project>{931197f2-2b0e-47a8-a3a5-10c3b7b124ef}</Project>
-      <Name>Evans.Core.Constants</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Evans.Core.Extensions\Evans.Core.Extensions.csproj">
-      <Project>{91abb235-ed51-43d3-95a8-9771f6ba8ca5}</Project>
-      <Name>Evans.Core.Extensions</Name>
-    </ProjectReference>
+    <Compile Include="RegexPatterns.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
