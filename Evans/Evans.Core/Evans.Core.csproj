@@ -46,6 +46,8 @@
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="IChangeSubscriber.cs" />
     <Compile Include="IoC\IContainer.cs" />
+    <Compile Include="Logging\ILogEntry.cs" />
+    <Compile Include="Logging\ILogger.cs" />
     <Compile Include="Models\IDomainEntity.cs" />
     <Compile Include="Models\IModel.cs" />
     <Compile Include="Models\PropertyChangeHandler.cs" />

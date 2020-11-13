@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evans.Repository.Ef.Northwi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evans.Core.Extensions.Tests", "Evans.Core.Extensions.Tests\Evans.Core.Extensions.Tests.csproj", "{B2BAE38A-05CC-4154-AEA4-D497190505C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evans.IoC.SimpleInjector", "Evans.IoC.SimpleInjector\Evans.IoC.SimpleInjector.csproj", "{E61E50EF-6773-476E-AF56-C6B5C30F0515}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{B2BAE38A-05CC-4154-AEA4-D497190505C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2BAE38A-05CC-4154-AEA4-D497190505C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2BAE38A-05CC-4154-AEA4-D497190505C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E61E50EF-6773-476E-AF56-C6B5C30F0515}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E61E50EF-6773-476E-AF56-C6B5C30F0515}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E61E50EF-6773-476E-AF56-C6B5C30F0515}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E61E50EF-6773-476E-AF56-C6B5C30F0515}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

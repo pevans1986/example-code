@@ -10,6 +10,8 @@ namespace Evans.Core.IoC
 	{
 		#region Public Methods
 
+		IContainer AutoRegisterRepositories();
+
 		/// <summary>
 		/// Perform auto-registration of service types to minimize the number of explicit registrations.
 		/// </summary>
@@ -22,9 +24,11 @@ namespace Evans.Core.IoC
 
 		// TODO RegisterMapper(IMapper mapper)
 
+		IContainer AutoRegisterServiceClasses();
+
 		IContainer RegisterServiceType<TService, TImplementation>()
 			where TService : class
-			where TImplementation : class;
+			where TImplementation : class, TService;
 
 		IContainer RegisterServiceType(Type serviceType, Type implementationType);
 

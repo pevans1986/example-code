@@ -1,12 +1,12 @@
-﻿using Evans.Core.Constants;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
+using System.Threading.Tasks;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+using System.Linq;
+
+using Evans.Core.Constants;
 
 namespace System
 {
@@ -30,8 +30,8 @@ namespace System
 		}
 
 		/// <summary>
-		/// Compares this string to the given value and returns the result of an equality check using
-		/// <see cref="StringComparison.CurrentCultureIgnoreCase"/>.
+		/// Compares this string to the given value and returns the result of an equality check
+		/// using <see cref="StringComparison.CurrentCultureIgnoreCase" />.
 		/// </summary>
 		/// <param name="self"></param>
 		/// <param name="compValue"></param>
@@ -52,7 +52,7 @@ namespace System
 		}
 
 		/// <summary>
-		/// If the string is null, empty, or whitespace, returns <paramref name="otherText"/>.
+		/// If the string is null, empty, or whitespace, returns <paramref name="otherText" />.
 		/// </summary>
 		/// <param name="self"></param>
 		/// <param name="otherText">
@@ -108,12 +108,25 @@ namespace System
 			return self.Length < length;
 		}
 
+		/// <summary>
+		/// Checks if the value matches the format of a valid email address.
+		/// </summary>
+		/// <remarks>
+		/// The email address is not verified in any way other than confirming it is of the correct format.
+		/// </remarks>
+		/// <param name="self"></param>
+		/// <returns></returns>
 		public static bool IsValidEmailAddress(this string self)
 		{
 			return Regex.IsMatch(self, RegexPatterns.EMAIL_ADDRESS, RegexOptions.Compiled);
 		}
 
-		public static bool IsValidIpAddress(this string self)
+		/// <summary>
+		/// Checks if the value is a valid IPv4 address.
+		/// </summary>
+		/// <param name="self"></param>
+		/// <returns></returns>
+		public static bool IsValidIpv4Address(this string self)
 		{
 			return Regex.IsMatch(self, RegexPatterns.IP_ADDRESS, RegexOptions.Compiled);
 		}
@@ -125,13 +138,6 @@ namespace System
 
 		public static string RemoveSpecialCharacters(this string self)
 		{
-			//var stringBuilder = new StringBuilder(self.Length);
-
-			//foreach (var c in self.Where(c => char.IsLetterOrDigit(c)))
-			//{
-			//	stringBuilder.Append(c);
-			//}
-
 			string result = null;
 
 			if (self != null)
@@ -140,8 +146,6 @@ namespace System
 			}
 
 			return result;
-
-			//return stringBuilder.ToString();
 		}
 
 		/// <summary>
@@ -150,8 +154,8 @@ namespace System
 		/// <param name="self"></param>
 		/// <param name="value"></param>
 		/// <returns></returns>
-		/// <seealso cref="string.StartsWith(string)"/>
-		/// <seealso cref="StringComparison.CurrentCultureIgnoreCase"/>
+		/// <seealso cref="string.StartsWith(string)" />
+		/// <seealso cref="StringComparison.CurrentCultureIgnoreCase" />
 		public static bool StartsWithIgnoreCase(this string self, string value)
 		{
 			if (self == null || value == null)
@@ -161,7 +165,6 @@ namespace System
 
 			return self.StartsWith(value, StringComparison.CurrentCultureIgnoreCase);
 		}
-
 
 		/// <summary>
 		/// Converts the <c>string</c> value to a <c>Boolean</c>.
@@ -174,29 +177,39 @@ namespace System
 		public static Boolean ToBoolean(this String self)
 		{
 			var value = self.ToLower(CultureInfo.CurrentCulture).Trim();
-			
+
 			switch (value)
 			{
 				case "true":
 					return true;
+
 				case "false":
 					return false;
+
 				case "t":
 					return true;
+
 				case "f":
 					return false;
+
 				case "yes":
 					return true;
+
 				case "no":
 					return false;
+
 				case "y":
 					return true;
+
 				case "n":
 					return false;
+
 				case "1":
 					return true;
+
 				case "0":
 					return false;
+
 				default:
 					break;
 			}
@@ -208,7 +221,7 @@ namespace System
 		/// Converts strings to separate words based on capitalization.
 		/// </summary>
 		/// <param name="self"></param>
-		public static string ToSeparateWords(this string self) 
+		public static string ToSeparateWords(this string self)
 		{
 			if (self.IsBlank())
 			{
@@ -220,7 +233,7 @@ namespace System
 		}
 
 		/// <summary>
-		/// If the value of this <see cref="string"/> is longer than the given maximum number of
+		/// If the value of this <see cref="string" /> is longer than the given maximum number of
 		/// characters, the value will be truncated to the maximum length.
 		/// </summary>
 		/// <param name="self"></param>
