@@ -49,5 +49,11 @@
     <Compile Include="System\StringExtensions.cs" />
     <Compile Include="System\TypeExtensions.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Evans.Core\Evans.Core.csproj">
+      <Project>{672c02e5-6061-4951-8642-ef9479183e3d}</Project>
+      <Name>Evans.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

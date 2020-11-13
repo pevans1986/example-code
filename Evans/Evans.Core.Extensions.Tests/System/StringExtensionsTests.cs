@@ -1,16 +1,28 @@
-﻿using NUnit.Framework;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using NUnit.Framework;
 
 namespace System.Tests
 {
 	[TestFixture()]
 	public class StringExtensionsTests
 	{
+		#region Methods
+
+		[TestCase(null)]
+		[TestCase("")]
+		[TestCase(" ")]
+		[TestCase("    ")]
+		public static void IfBlankThen_ShouldHandleNullString(string value)
+		{
+			string result = value.IfBlankThen("otherString");
+			Assert.AreEqual("otherString", result);
+		}
+
 		[Test()]
 		[TestCase(null, ExpectedResult = null)]
 		[TestCase(" ", ExpectedResult = " ")]
@@ -32,16 +44,6 @@ namespace System.Tests
 		public void EqualsIgnoreCaseTest(string value1, string value2)
 		{
 			Assert.IsTrue(value1.EqualsIgnoreCase(value2));
-		}
-
-		[TestCase(null)]
-		[TestCase("")]
-		[TestCase(" ")]
-		[TestCase("    ")]
-		public static void IfBlankThen_ShouldHandleNullString(string value)
-		{
-			string result = value.IfBlankThen("otherString");
-			Assert.AreEqual("otherString", result);
 		}
 
 		[Test()]
@@ -83,6 +85,15 @@ namespace System.Tests
 			return value.Length < length;
 		}
 
+		[Test]
+		[TestCase("$Spec!i@al Ch@ar@acter$s", ExpectedResult = "Special Characters")]
+		[TestCase("$Sp3c1@al Ch@ar@act3r$s", ExpectedResult = "Sp3c1al Charact3rs")]
+		[TestCase(null, ExpectedResult = null)]
+		public string RemoveSpecialCharactersTest(string input)
+		{
+			return input.RemoveSpecialCharacters();
+		}
+
 		[Test()]
 		[TestCase("and", "a", ExpectedResult = true)]
 		[TestCase("and", "an", ExpectedResult = true)]
@@ -118,5 +129,7 @@ namespace System.Tests
 		{
 			return value.Truncate(maxLength);
 		}
+
+		#endregion Methods
 	}
 }

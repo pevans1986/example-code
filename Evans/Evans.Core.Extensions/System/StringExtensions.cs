@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Evans.Core.Constants;
+
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -105,6 +108,42 @@ namespace System
 			return self.Length < length;
 		}
 
+		public static bool IsValidEmailAddress(this string self)
+		{
+			return Regex.IsMatch(self, RegexPatterns.EMAIL_ADDRESS, RegexOptions.Compiled);
+		}
+
+		public static bool IsValidIpAddress(this string self)
+		{
+			return Regex.IsMatch(self, RegexPatterns.IP_ADDRESS, RegexOptions.Compiled);
+		}
+
+		public static bool IsValidUrl(this string self)
+		{
+			return Regex.IsMatch(self, RegexPatterns.URL, RegexOptions.Compiled);
+		}
+
+		public static string RemoveSpecialCharacters(this string self)
+		{
+			//var stringBuilder = new StringBuilder(self.Length);
+
+			//foreach (var c in self.Where(c => char.IsLetterOrDigit(c)))
+			//{
+			//	stringBuilder.Append(c);
+			//}
+
+			string result = null;
+
+			if (self != null)
+			{
+				result = string.Join(string.Empty, self.Where(c => char.IsLetterOrDigit(c) || c.Equals(' ')));
+			}
+
+			return result;
+
+			//return stringBuilder.ToString();
+		}
+
 		/// <summary>
 		/// Checks if this <c>string</c> starts with the given value, ignoring case.
 		/// </summary>
@@ -123,6 +162,48 @@ namespace System
 			return self.StartsWith(value, StringComparison.CurrentCultureIgnoreCase);
 		}
 
+
+		/// <summary>
+		/// Converts the <c>string</c> value to a <c>Boolean</c>.
+		/// </summary>
+		/// <param name="self"></param>
+		/// <returns></returns>
+		/// <exception cref="ArgumentException">
+		/// If the string is not a known value that has a corresponding Boolean value.
+		/// </exception>
+		public static Boolean ToBoolean(this String self)
+		{
+			var value = self.ToLower(CultureInfo.CurrentCulture).Trim();
+			
+			switch (value)
+			{
+				case "true":
+					return true;
+				case "false":
+					return false;
+				case "t":
+					return true;
+				case "f":
+					return false;
+				case "yes":
+					return true;
+				case "no":
+					return false;
+				case "y":
+					return true;
+				case "n":
+					return false;
+				case "1":
+					return true;
+				case "0":
+					return false;
+				default:
+					break;
+			}
+
+			throw new ArgumentException("Input is not a boolean value.");
+		}
+
 		/// <summary>
 		/// Converts strings to separate words based on capitalization.
 		/// </summary>
@@ -135,7 +216,7 @@ namespace System
 			}
 
 			// TODO Include options for patterns - capitalization, camelCase, underline, etc
-			return Regex.Replace(self, "([A-Z][a-z])", " $1").Trim();
+			return Regex.Replace(self, RegexPatterns.WORD_SEPARATION_CASE, " $1").Trim();
 		}
 
 		/// <summary>
