@@ -52,6 +52,11 @@ namespace Evans.Service
 			_repository.SaveChanges();
 		}
 
+		public void Update(TModel model)
+		{
+			_repository.Update(model.Id, model);
+		}
+
 		#endregion Public Methods
 	}
 }

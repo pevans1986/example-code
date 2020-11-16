@@ -19,6 +19,8 @@ namespace Evans.Core.Service
 
 		TModel GetById(Guid id);
 
+		void Update(TModel model);
+
 		void Update(Guid id, TModel model);
 	}
 }
